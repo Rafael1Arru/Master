@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  background: var(--bg-url);
+}
+
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+}
+
+:root {
+  -text-color: white;
+  --bg-url: url(/assets/bg-mobile.jpg) no-repeat top center/cover;
+  --bg-filler: rgba(255, 255, 255, 0.1);
+  --bg--filler-hover: rgba(255, 255, 255, 0.2);
+  --bg-filler-sl-hover: rgba(255, 255, 255, 0.2);
+  --switcher-bg: url(/assets/moon-stars.svg) white no-repeat center;
+}
+
+.light-mode {
+  --bg-url: url(/assets/bg-mobile-light.jpg) no-repeat top center/cover;
+  --text-color: black;
+  --bg-filler: rgba(0, 0, 0, 0.05);
+  --bg-filler-hover: rgba(0, 0, 0, 0.2);
+  --bg-filler-sl-hover: rgba(0, 0, 0, 0.1);
+  --switcher-bg: url(/assets/sun.svg) white no-repeat center;
+}
+
+#main {
+  width: 360px;
+  margin: 56px auto 0;
+  padding: auto 24px;
+}
+
+#profile {
+  text-align: center;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 25px;
+
+  padding: 0 0 24px 0;
+  margin-top: 8px;
+}
+
+#profile img {
+  width: 112px;
+  margin-top: 24px;
+}
+
+#switcher {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switcher button {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+
+  background: var(--switcher-bg);
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.light-mode #switcher button {
+  right: 0;
+  left: initial;
+}
+
+#switcher span {
+  height: 27px;
+  width: 64px;
+  border-radius: 9999px;
+
+  display: block;
+
+  background-color: var(--bg-filler);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+lu {
+  display: flex;
+  flex-direction: column;
+
+  margin: 24px;
+
+  list-style: none;
+  gap: 16px;
+}
+
+/* text-align= alinhar o texto */
+/* justify-content= alinha o texto no eixo X  */
+/* align-items= o eixo principal ( linha no meio das box ) */
+
+lu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+
+  background-color: var(--bg-filler);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  /* border: 1px solid rgba( 255,255,255, 0.5 ); */
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 500 /* ou BOLD, porque acima de valor 500 é BOLD*/;
+
+  transition: background 0.5s;
+}
+
+lu li a:hover {
+  background-color: var(--bg-filler-hover);
+  /* border: 1.5px solid white; */
+}
+
+#social-links {
+  display: flex;
+  padding: 24px 0;
+
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+#social-links a:hover {
+  background-color: var(--bg-filler-sl-hover);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+}
