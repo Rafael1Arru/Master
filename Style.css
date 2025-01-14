@@ -20,7 +20,7 @@ body * {
 }
 
 :root {
-  -text-color: white;
+  --text-color: white;
   --bg-url: url(/assets/bg-mobile.jpg) no-repeat top center/cover;
   --bg-filler: rgba(255, 255, 255, 0.1);
   --bg--filler-hover: rgba(255, 255, 255, 0.2);
