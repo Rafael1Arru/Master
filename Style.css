@@ -12,6 +12,7 @@ body {
   background-size: cover;
   */
   background: var(--bg-url);
+  height: 100vh;
 }
 
 body * {
@@ -160,4 +161,14 @@ lu li a:hover {
 footer {
   padding: 24px 0;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+ :root {
+  --bg-url: url(./asets/bg-desktop.jpg);
+ }
+
+ .light-mode {
+  --bg-url: url(./assets/bg-desktop-light.jpg);
+ }
 }
