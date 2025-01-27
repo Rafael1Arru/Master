@@ -11,6 +11,7 @@ body {
   background-position: top center;
   background-size: cover;
   */
+  
   background: var(--bg-url);
   height: 100vh;
 }
@@ -24,7 +25,7 @@ body * {
   --text-color: white;
   --bg-url: url(/assets/bg-mobile.jpg) no-repeat top center/cover;
   --bg-filler: rgba(255, 255, 255, 0.1);
-  --bg--filler-hover: rgba(255, 255, 255, 0.2);
+  --bg--filler-hover: rgba(255, 255, 255, 0);
   --bg-filler-sl-hover: rgba(255, 255, 255, 0.2);
   --switcher-bg: url(/assets/moon-stars.svg) white no-repeat center;
 }
@@ -33,7 +34,7 @@ body * {
   --bg-url: url(/assets/bg-mobile-light.jpg) no-repeat top center/cover;
   --text-color: black;
   --bg-filler: rgba(0, 0, 0, 0.05);
-  --bg-filler-hover: rgba(0, 0, 0, 0.2);
+  --bg-filler-hover: rgba(0, 0, 0, 0);
   --bg-filler-sl-hover: rgba(0, 0, 0, 0.1);
   --switcher-bg: url(/assets/sun.svg) white no-repeat center;
 }
@@ -80,11 +81,16 @@ body * {
   left: 0;
   transform: translateY(-50%);
   z-index: 1;
+  animation: slide-return 0.4s;
+}
+
+#switcher button:hover {
+  outline: 8px var(--bg--filler-hover);
 }
 
 .light-mode #switcher button {
-  right: 0;
-  left: initial;
+
+  animation: slide-in 0.4s forwards;
 }
 
 #switcher span {
@@ -165,10 +171,30 @@ footer {
 
 @media (min-width: 700px) {
  :root {
-  --bg-url: url(./asets/bg-desktop.jpg);
+  --bg-url: url(./assets/bg-desktop.jpg)  no-repeat top center/cover;
  }
 
  .light-mode {
-  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --bg-url: url(./assets/bg-desktop-light.jpg) no-repeat top center/cover;
  }
+}
+
+@keyframes slide-in{
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-return{
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
+  }
 }
